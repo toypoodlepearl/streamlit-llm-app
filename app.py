@@ -1,6 +1,6 @@
-##  from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-##  load_dotenv()
+load_dotenv()
 
 from langchain_openai import ChatOpenAI
 
@@ -10,11 +10,6 @@ llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0)
 
 
 st.title("提出課題: LLMを用いたWebアプリ")
-
-st.write("##### 動作モード1: 文字数カウント")
-st.write("入力フォームにテキストを入力し、「実行」ボタンを押すことで文字数をカウントできます。")
-st.write("##### 動作モード2: BMI値の計算")
-st.write("身長と体重を入力することで、肥満度を表す体型指数のBMI値を算出できます。")
 
 selected_item = st.radio(
     "動作モードを選択してください。",
