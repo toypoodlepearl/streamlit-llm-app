@@ -1,3 +1,5 @@
+!pip install langchain==0.3.0 openai==1.47.0 langchain-community==0.3.0 langchain-openai==0.2.2 httpx==0.27.2
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -30,4 +32,4 @@ if st.button("実行"):
     st.divider()
 
 result = llm(messages)
-st.write(f"回答: **{human_message}**")
+st.write(f"回答: **{result.content}**")
