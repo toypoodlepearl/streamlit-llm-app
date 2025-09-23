@@ -23,12 +23,16 @@ selected_item = st.radio(
 st.divider()
 
 if selected_item == "地理に関する質問":
-    SystemMessage(content="あなたは、世界の地理に関する専門家です。"),
-    human_message = st.text_input(label="世界の地理に関する質問を入力してください。")
+    messages = [
+        SystemMessage(content="あなたは、世界の地理に関する専門家です。"),
+        HumanMessage(content=st.text_input(label="地理に関する質問を入力してください。"))
+        ]
 
 else:
-    SystemMessage(content="あなたは、健康に関する専門家です。"),
-    human_message = st.text_input(label="健康に関する質問を入力してください。")
+    messages = [
+        SystemMessage(content="あなたは、健康に関する専門家です。"),
+        HumanMessage(content=st.text_input(label="健康に関する質問を入力してください。"))
+        ]
 
 if st.button("実行"):
     st.divider()
